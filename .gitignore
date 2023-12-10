@@ -1,0 +1,4 @@
+modelo-ml/__pycache__/
+modelo-ml/.pytest_cache/
+modelo-ml/knn_model.pkl
+env/

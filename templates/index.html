@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão de Qualidade de Vinho</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+
+            <h1 class="mb-5 text-center">Previsão de Qualidade de Vinho</h1>
+
+            <form id="predictForm" class="card p-4" onsubmit="return false;">
+
+                <!-- First Row -->
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="fixed_acidity" class="form-label">Acidez Fixa (4.6 - 15.9)</label>
+                        <input type="number" class="form-control" id="fixed_acidity" placeholder="7.4" min="4.6" max="15.9" step="0.1" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="volatile_acidity" class="form-label">Acidez Volátil (0.12 - 1.58)</label>
+                        <input type="number" class="form-control" id="volatile_acidity" placeholder="0.7" min="0.12" max="1.58" step="0.01" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="citric_acid" class="form-label">Ácido Cítrico (0 - 1.66)</label>
+                        <input type="number" class="form-control" id="citric_acid" placeholder="0" min="0" max="1.66" step="0.01" required>
+                    </div>
+                </div>
+
+                <!-- Second Row -->
+                <div class="row g-3 mt-3">
+                    <div class="col-md-4">
+                        <label for="residual_sugar" class="form-label">Açúcar Residual (0.9 - 15.5)</label>
+                        <input type="number" class="form-control" id="residual_sugar" placeholder="2.3" min="0.9" max="15.5" step="0.1" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="chlorides" class="form-label">Cloretos (0.012 - 0.611)</label>
+                        <input type="number" class="form-control" id="chlorides" placeholder="0.08" min="0.012" max="0.611" step="0.001" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="free_sulfur_dioxide" class="form-label">Dióxido de Enxofre Livre (1 - 72)</label>
+                        <input type="number" class="form-control" id="free_sulfur_dioxide" placeholder="15" min="1" max="72" step="1" required>
+                    </div>
+                </div>
+
+                <!-- Third Row -->
+                <div class="row g-3 mt-3">
+                    <div class="col-md-4">
+                        <label for="total_sulfur_dioxide" class="form-label">Dióxido de Enxofre Total (6 - 289)</label>
+                        <input type="number" class="form-control" id="total_sulfur_dioxide" placeholder="34" min="6" max="289" step="1" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="density" class="form-label">Densidade (0.99007 - 1.00369)</label>
+                        <input type="number" class="form-control" id="density" placeholder="0.997" min="0.99007" max="1.00369" step="0.00001" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="pH" class="form-label">pH (2.74 - 4.01)</label>
+                        <input type="number" class="form-control" id="pH" placeholder="3.4" min="2.74" max="4.01" step="0.01" required>
+                    </div>
+                </div>
+
+                <!-- Fourth Row -->
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <label for="sulphates" class="form-label">Sulfatos (0.33 - 2.0)</label>
+                        <input type="number" class="form-control" id="sulphates" placeholder="0.7" min="0.33" max="2.0" step="0.01" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="alcohol" class="form-label">Álcool (8.4 - 14.9)</label>
+                        <input type="number" class="form-control" id="alcohol" placeholder="10.4" min="8.4" max="14.9" step="0.1" required>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-4 text-center">
+                    <button type="submit" class="btn btn-success">Prever Qualidade</button>
+                </div>
+            </form>
+
+            <!-- Prediction Results -->
+            <div class="prediction-results mt-4">
+                <div id="predictionResult" class="alert alert-success text-center"></div>
+                <div id="predictionProba" class="alert alert-secondary text-center"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- Custom JavaScript -->
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
