@@ -108,6 +108,7 @@ class BaseModel:
         print(f"Melhores parâmetros: {grid_search.best_params_}")
 
     def evaluate_model(self, X_test, y_test, class_names):
+        # Avaliando o modelo com os dados de teste
         y_pred = self.best_model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
         cm = confusion_matrix(y_test, y_pred)
