@@ -15,8 +15,8 @@ Siga as instruções abaixo para configurar o projeto em sua máquina local:
 1. Clone o repositório do GitHub onde o projeto está hospedado:
 
 ```bash
-git clone [URL_DO_SEU_REPOSITORIO]
-cd [NOME_DO_SEU_REPOSITORIO]
+git clone https://github.com/raulmoretti/pos-mvp4
+cd pos-mvp4
 ```
 
 2. Crie um ambiente virtual e ative-o:
